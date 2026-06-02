@@ -1,0 +1,31 @@
+---
+const logos = [
+  'ACME Industries', 'Makespace Labs', 'DesignHub', 'TechForge',
+  'Protolab', 'InnovateMFG', 'MedDevice Co.', 'AeroParts',
+]
+---
+<div class="py-5 px-6 sm:px-12 overflow-hidden" style="background: #E8E8E6">
+  <div class="section-container">
+    <div class="flex items-center gap-6">
+      <span
+        class="text-[10px] font-medium uppercase tracking-widest shrink-0"
+        style="color: #AAAAAA"
+      >
+        Confían en nosotros
+      </span>
+      <div class="flex-1 overflow-hidden">
+        <div class="logos-track flex whitespace-nowrap">
+          {[...logos, ...logos].map((logo, i) => (
+            <span
+              key={i}
+              class="text-[15px] font-medium px-6"
+              style="color: #AAAAAA"
+            >
+              {logo}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

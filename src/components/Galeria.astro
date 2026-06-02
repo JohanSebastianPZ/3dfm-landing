@@ -1,0 +1,28 @@
+---
+import GaleriaFilter from './GaleriaFilter.tsx'
+---
+<section id="galeria" class="py-24 px-6 sm:px-12 md:px-20 lg:px-28" style="background: var(--bg-surface)">
+  <div class="section-container">
+
+    <div class="mb-10">
+      <span
+        class="inline-flex items-center rounded-full px-3 py-1 text-[14px] font-medium border mb-6"
+        style="color: #FF5500; border-color: rgba(255,85,0,0.25)"
+      >
+        Proyectos
+      </span>
+      <h2
+        class="text-[2rem] sm:text-[2.75rem] font-medium tracking-tight mb-4 max-w-lg"
+        style="color: var(--color-900)"
+      >
+        Lo que fabricamos
+      </h2>
+      <p class="text-[17px]" style="color: var(--color-400)">
+        Una selección de proyectos reales. Desde prototipos hasta producción.
+      </p>
+    </div>
+
+    <GaleriaFilter client:visible />
+
+  </div>
+</section>

@@ -1,0 +1,136 @@
+---
+---
+<section id="precios" class="py-24 px-6 sm:px-12 md:px-20 lg:px-28" style="background: var(--bg-page)">
+  <div class="section-container">
+
+    <div class="mb-14 text-center lg:text-left">
+      <span
+        class="inline-flex items-center rounded-full px-3 py-1 text-[14px] font-medium border mb-6"
+        style="color: #FF5500; border-color: rgba(255,85,0,0.25)"
+      >
+        Precios
+      </span>
+      <h2
+        class="text-[2rem] sm:text-[2.75rem] font-medium tracking-tight mb-4"
+        style="color: var(--color-900)"
+      >
+        Planes para cada proyecto
+      </h2>
+      <p class="text-[17px]" style="color: var(--color-400)">
+        Sin compromisos a largo plazo. Paga solo por lo que necesitas.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-px" style="background: var(--bg-separator)">
+
+      <div class="p-8 sm:p-10 flex flex-col items-center lg:items-start text-center lg:text-left" style="background: var(--bg-page)">
+        <span
+          class="inline-flex text-[14px] border border-gray-300 text-gray-500 rounded-full px-3 py-0.5 mb-6"
+        >
+          Maker
+        </span>
+        <div class="mb-6">
+          <span class="text-[2.25rem] font-medium" style="color: var(--color-900)">Desde 8€</span>
+          <span class="text-[16px] ml-1" style="color: var(--color-400)">/ pieza</span>
+        </div>
+        <ul class="flex flex-col items-start gap-3 mb-8 w-fit text-left">
+          {['Material FDM estándar', 'Entrega 5–7 días', 'Hasta 5 piezas'].map(f => (
+            <li class="flex items-center gap-2 text-[16px]" style="color: #4b5563">
+              <span style="color: #FF5500">✓</span>
+              {f}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contacto"
+          class="group inline-flex items-center gap-1.5 text-[16px] font-medium border rounded-full px-4 py-2 transition-all duration-200"
+          style="color: #FF5500; border-color: rgba(255,85,0,0.35)"
+          onmouseenter="this.style.background='#FF5500';this.style.color='#fff'"
+          onmouseleave="this.style.background='';this.style.color='#FF5500'"
+        >
+          Solicitar
+          <span class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+        </a>
+      </div>
+
+      <div
+        class="p-8 sm:p-10 border-t-2 lg:border-t-0 lg:border-t-2 flex flex-col items-center lg:items-start text-center lg:text-left"
+        style="background: var(--bg-page); border-top-color: #FF5500"
+      >
+        <p class="text-[10px] uppercase tracking-widest mb-1" style="color: var(--color-400)">Más popular</p>
+        <span
+          class="inline-flex text-[14px] rounded-full px-3 py-0.5 mb-6 border"
+          style="color: #FF5500; border-color: rgba(255,85,0,0.3)"
+        >
+          Profesional
+        </span>
+        <div class="mb-6">
+          <span class="text-[2.25rem] font-medium" style="color: var(--color-900)">Presupuesto</span>
+          <p class="text-[16px] mt-1" style="color: var(--color-400)">personalizado</p>
+        </div>
+        <ul class="flex flex-col items-start gap-3 mb-8 w-fit text-left">
+          {[
+            'Todas las tecnologías',
+            'Entrega prioritaria 48h',
+            'Posprocesado incluido',
+            'Revisión de diseño',
+            'Gestor de proyecto dedicado',
+          ].map(f => (
+            <li class="flex items-center gap-2 text-[16px]" style="color: #4b5563">
+              <span style="color: #FF5500">✓</span>
+              {f}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contacto"
+          class="group inline-flex items-center gap-1.5 text-[16px] font-medium rounded-full px-4 py-2 transition-all duration-200"
+          style="background: #FF5500; color: #fff"
+          onmouseenter="this.style.background='#E04D00'"
+          onmouseleave="this.style.background='#FF5500'"
+        >
+          Solicitar presupuesto
+          <span class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+        </a>
+      </div>
+
+      <div class="p-8 sm:p-10 flex flex-col items-center lg:items-start text-center lg:text-left" style="background: var(--bg-page)">
+        <span
+          class="inline-flex text-[14px] rounded-full px-3 py-0.5 mb-6 border"
+          style="color: #7C3AED; border-color: rgba(124,58,237,0.3)"
+        >
+          Empresa / B2B
+        </span>
+        <div class="mb-6">
+          <span class="text-[2.25rem] font-medium" style="color: var(--color-900)">Volumen</span>
+          <p class="text-[16px] mt-1" style="color: var(--color-400)">desde 50 uds.</p>
+        </div>
+        <ul class="flex flex-col items-start gap-3 mb-8 w-fit text-left">
+          {[
+            'Precios por volumen',
+            'API de pedidos',
+            'Facturación centralizada',
+            'SLA garantizado',
+          ].map(f => (
+            <li class="flex items-center gap-2 text-[16px]" style="color: #4b5563">
+              <span style="color: #7C3AED">✓</span>
+              {f}
+            </li>
+          ))}
+        </ul>
+        <a
+          href="#contacto"
+          class="group inline-flex items-center gap-1.5 text-[16px] font-medium border rounded-full px-4 py-2 transition-all duration-200"
+          style="color: #7C3AED; border-color: rgba(124,58,237,0.35)"
+          onmouseenter="this.style.background='#7C3AED';this.style.color='#fff'"
+          onmouseleave="this.style.background='';this.style.color='#7C3AED'"
+        >
+          Contactar ventas
+          <span class="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

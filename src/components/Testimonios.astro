@@ -1,0 +1,441 @@
+---
+interface Testimonio {
+  iniciales: string
+  nombre: string
+  rol: string
+  empresa: string
+  cita: string
+  avatarFrom: string
+  avatarTo: string
+}
+
+const fila1: Testimonio[] = [
+  {
+    iniciales: 'MA',
+    nombre: 'Marc A.',
+    rol: 'Jefe de producción',
+    empresa: 'Automoción',
+    cita: '200 piezas de nylon para nuestra cadena de montaje. Calidad industrial, entregadas en plazo y con acabado impecable.',
+    avatarFrom: '#FF5500',
+    avatarTo: '#FF8A00',
+  },
+  {
+    iniciales: 'LG',
+    nombre: 'Laura G.',
+    rol: 'Diseñadora · Maker',
+    empresa: 'Freelance',
+    cita: 'Figura personalizada con resina SLA. El nivel de detalle es brutal, nunca pensé que podía quedar así de bien.',
+    avatarFrom: '#7C3AED',
+    avatarTo: '#9333EA',
+  },
+  {
+    iniciales: 'JR',
+    nombre: 'Jordi R.',
+    rol: 'CTO',
+    empresa: 'Startup Tech',
+    cita: 'Prototipos en 48h para nuestra ronda de inversión. Los presentamos ante el comité y el acabado impresionó a todos.',
+    avatarFrom: '#059669',
+    avatarTo: '#10B981',
+  },
+  {
+    iniciales: 'EP',
+    nombre: 'Elena P.',
+    rol: 'Directora de operaciones',
+    empresa: 'MedDevice',
+    cita: 'Llevamos 3 años con PrintLab3D para producción de piezas médicas. Fiabilidad y calidad constante en cada pedido.',
+    avatarFrom: '#0284C7',
+    avatarTo: '#38BDF8',
+  },
+  {
+    iniciales: 'RC',
+    nombre: 'Roberto C.',
+    rol: 'Responsable de compras',
+    empresa: 'TechForge',
+    cita: '500 soportes para nuestra línea de ensamblaje. El precio por unidad y el plazo fueron imposibles de igualar.',
+    avatarFrom: '#D97706',
+    avatarTo: '#F59E0B',
+  },
+  {
+    iniciales: 'AM',
+    nombre: 'Ana M.',
+    rol: 'Arquitecta',
+    empresa: 'Estudio AM',
+    cita: 'Primera vez que usaba impresión 3D. El asesoramiento sobre materiales fue clave para elegir bien el proceso.',
+    avatarFrom: '#DB2777',
+    avatarTo: '#EC4899',
+  },
+]
+
+const fila2: Testimonio[] = [
+  {
+    iniciales: 'PV',
+    nombre: 'Pablo V.',
+    rol: 'Director comercial',
+    empresa: 'InnovateMFG',
+    cita: 'Modelos de exhibición para nuestro stand de feria. Varios clientes preguntaron dónde los habíamos fabricado.',
+    avatarFrom: '#0F766E',
+    avatarTo: '#14B8A6',
+  },
+  {
+    iniciales: 'ST',
+    nombre: 'Sara T.',
+    rol: 'Product designer',
+    empresa: 'DesignHub',
+    cita: 'El posprocesado marcó la diferencia. Las piezas llegaron pintadas y listas para montar en el producto final.',
+    avatarFrom: '#9333EA',
+    avatarTo: '#A855F7',
+  },
+  {
+    iniciales: 'MF',
+    nombre: 'Miquel F.',
+    rol: 'Ingeniero jefe',
+    empresa: 'AeroParts',
+    cita: 'Teníamos un plazo imposible de 36h. No solo lo cumplieron sino que la calidad era perfecta. Repetiremos.',
+    avatarFrom: '#B45309',
+    avatarTo: '#D97706',
+  },
+  {
+    iniciales: 'CN',
+    nombre: 'Clara N.',
+    rol: 'Brand manager',
+    empresa: 'Protolab',
+    cita: 'Prototipos para nuestra línea de packaging sostenible. Rápidos, precisos y con muy buen precio de serie.',
+    avatarFrom: '#FF5500',
+    avatarTo: '#FF8A00',
+  },
+  {
+    iniciales: 'DM',
+    nombre: 'David M.',
+    rol: 'Técnico de mantenimiento',
+    empresa: 'ACME Ind.',
+    cita: 'Los engranajes SLS llevan 8 meses en producción continua bajo carga. Sin ningún fallo ni desgaste visible.',
+    avatarFrom: '#1D4ED8',
+    avatarTo: '#3B82F6',
+  },
+  {
+    iniciales: 'IA',
+    nombre: 'Iván A.',
+    rol: 'Maker · Aficionado',
+    empresa: 'Particular',
+    cita: 'Como maker el precio me preocupaba, pero es muy competitivo. La plataforma para subir el STL es muy intuitiva.',
+    avatarFrom: '#059669',
+    avatarTo: '#10B981',
+  },
+]
+---
+
+<section style="background: #EAEAE8; position: relative; overflow: hidden; padding: 5rem 0 5.5rem;">
+
+  <!-- Luces ambientales sutiles -->
+  <div
+    aria-hidden="true"
+    style="
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 40% at 15% 30%, rgba(255,85,0,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 35% at 85% 70%, rgba(124,58,237,0.04) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 30% at 60% 15%, rgba(14,165,233,0.03) 0%, transparent 50%);
+    "
+  ></div>
+
+  <!-- Header — mismo patrón que el resto de secciones -->
+  <div class="px-6 sm:px-12 md:px-20 lg:px-28" style="position: relative; z-index: 1;">
+    <div class="section-container">
+      <div class="mb-14">
+        <span
+          class="inline-flex items-center rounded-full px-3 py-1 text-[14px] font-medium border mb-6"
+          style="color: #FF5500; border-color: rgba(255,85,0,0.25)"
+        >
+          Clientes
+        </span>
+        <h2
+          class="text-[2rem] sm:text-[2.75rem] font-medium tracking-tight mb-4 max-w-lg"
+          style="color: var(--color-900)"
+        >
+          Lo que dicen quienes ya imprimen con nosotros
+        </h2>
+        <p class="text-[17px]" style="color: var(--color-400)">
+          Empresas, makers y startups de toda España
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fila 1 — izquierda -->
+  <div class="tst-lane" aria-label="Primera fila de testimonios">
+    <div class="tst-track tst-track--fwd">
+      {[...fila1, ...fila1].map((t) => (
+        <article class="tst-card" aria-label={`Testimonio de ${t.nombre}`}>
+          <div class="tst-card-inner">
+            <div class="tst-card-top">
+              <div class="tst-stars" aria-label="5 estrellas">★★★★★</div>
+              <div class="tst-verified" aria-label="Verificado">
+                <div class="tst-v-dot"></div>
+                Verificado
+              </div>
+            </div>
+            <blockquote class="tst-quote">"{t.cita}"</blockquote>
+            <div class="tst-divider" aria-hidden="true"></div>
+            <footer class="tst-footer">
+              <div
+                class="tst-avatar"
+                style={`background: linear-gradient(135deg, ${t.avatarFrom}, ${t.avatarTo})`}
+                aria-hidden="true"
+              >
+                {t.iniciales}
+              </div>
+              <div>
+                <div class="tst-name">{t.nombre}</div>
+                <div class="tst-role">{t.rol}</div>
+              </div>
+              <div class="tst-company">{t.empresa}</div>
+            </footer>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+  <!-- Fila 2 — derecha (dirección inversa) -->
+  <div class="tst-lane" aria-label="Segunda fila de testimonios">
+    <div class="tst-track tst-track--rev">
+      {[...fila2, ...fila2].map((t) => (
+        <article class="tst-card" aria-label={`Testimonio de ${t.nombre}`}>
+          <div class="tst-card-inner">
+            <div class="tst-card-top">
+              <div class="tst-stars" aria-label="5 estrellas">★★★★★</div>
+              <div class="tst-verified" aria-label="Verificado">
+                <div class="tst-v-dot"></div>
+                Verificado
+              </div>
+            </div>
+            <blockquote class="tst-quote">"{t.cita}"</blockquote>
+            <div class="tst-divider" aria-hidden="true"></div>
+            <footer class="tst-footer">
+              <div
+                class="tst-avatar"
+                style={`background: linear-gradient(135deg, ${t.avatarFrom}, ${t.avatarTo})`}
+                aria-hidden="true"
+              >
+                {t.iniciales}
+              </div>
+              <div>
+                <div class="tst-name">{t.nombre}</div>
+                <div class="tst-role">{t.rol}</div>
+              </div>
+              <div class="tst-company">{t.empresa}</div>
+            </footer>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .tst-lane {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .tst-lane::before,
+  .tst-lane::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 80px;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .tst-lane::before {
+    left: 0;
+    background: linear-gradient(to right, #EAEAE8, transparent);
+  }
+  .tst-lane::after {
+    right: 0;
+    background: linear-gradient(to left, #EAEAE8, transparent);
+  }
+
+  .tst-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    padding: 8px 4px;
+  }
+  .tst-track--fwd { animation: tst-slide-l 40s linear infinite; }
+  .tst-track--rev { animation: tst-slide-r 46s linear infinite; }
+  .tst-track:hover { animation-play-state: paused; }
+
+  .tst-card {
+    flex-shrink: 0;
+    width: 284px;
+    position: relative;
+    border-radius: 20px;
+    padding: 1px;
+    cursor: default;
+    transition: transform 0.3s ease;
+  }
+  .tst-card:hover {
+    transform: translateY(-3px) scale(1.015);
+  }
+
+  /* Borde iridiscente */
+  .tst-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: linear-gradient(
+      135deg,
+      rgba(255,255,255,0.85) 0%,
+      rgba(255,255,255,0.20) 30%,
+      rgba(255,85,0,0.25)   50%,
+      rgba(124,58,237,0.20) 70%,
+      rgba(255,255,255,0.70) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Reflejo superior */
+  .tst-card::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 10%; right: 10%;
+    height: 38%;
+    border-radius: 20px 20px 60% 60%;
+    background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.50) 0%,
+      rgba(255,255,255,0.08) 60%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  .tst-card-inner {
+    position: relative;
+    z-index: 2;
+    border-radius: 19px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.48);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+  }
+
+  /* Brillo de esquina */
+  .tst-card-inner::before {
+    content: '';
+    position: absolute;
+    top: -28px; right: -18px;
+    width: 90px; height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.55) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .tst-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .tst-stars {
+    color: #FF5500;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  .tst-verified {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #999999;
+  }
+
+  .tst-v-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #22C55E;
+  }
+
+  .tst-quote {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.62;
+    font-style: normal;
+    quotes: none;
+  }
+
+  .tst-divider {
+    height: 0.5px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.08), transparent);
+  }
+
+  .tst-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .tst-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 500;
+    color: white;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+
+  .tst-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 1px;
+  }
+
+  .tst-role {
+    font-size: 14px;
+    color: #888888;
+  }
+
+  .tst-company {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #AAAAAA;
+    background: rgba(0,0,0,0.04);
+    border: 0.5px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 640px) {
+    .tst-card { width: 260px; }
+    .tst-lane::before,
+    .tst-lane::after { width: 50px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tst-track--fwd,
+    .tst-track--rev { animation: none; }
+  }
+</style>

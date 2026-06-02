@@ -1,0 +1,25 @@
+---
+import HeroAnimations from './HeroAnimations.tsx'
+---
+<section class="relative min-h-screen overflow-hidden" style="background: var(--bg-page)">
+
+  <!-- Video fullscreen -->
+  <video
+  class="absolute inset-0 w-full h-full object-cover"
+  autoplay loop muted playsinline
+  src="/Video_hero.mp4"
+/>
+
+  <!-- Subtle overlay — preserves light tone -->
+  <div class="absolute inset-0" style="background: rgba(240,240,238,0.28)"></div>
+
+  <!-- Bottom fade to page background -->
+  <div
+    class="pointer-events-none absolute bottom-0 left-0 right-0 h-56"
+    style="background: linear-gradient(to bottom, transparent, var(--bg-page))"
+  ></div>
+
+  <!-- Animated content (React island) -->
+  <HeroAnimations client:load />
+
+</section>
