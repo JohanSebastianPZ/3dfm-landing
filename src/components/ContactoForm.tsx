@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 
 interface FormState {
@@ -176,12 +174,15 @@ export default function ContactoForm() {
 
       {/* hCaptcha */}
       <div className="mb-4">
-        <div
-          className="h-captcha"
-          data-sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? ''}
-          data-theme="light"
-        />
-      </div>
+        {import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY
+        ? <div
+            className="h-captcha"
+            data-sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY}
+            data-theme="light"
+            />
+        : null
+        }
+    </div>
 
       {/* Privacy checkbox */}
       <div className="mb-6">
@@ -195,7 +196,7 @@ export default function ContactoForm() {
           />
           <span className="text-[15px]" style={{ color: 'var(--color-500)' }}>
             Acepto la{' '}
-            <a href="#" className="underline" style={{ color: 'var(--color-700)' }}>
+            <a href="/privacidad" className="underline" style={{ color: 'var(--color-700)' }}>
               política de privacidad
             </a>
           </span>
@@ -233,6 +234,11 @@ export default function ContactoForm() {
         {status === 'success' && '¡Enviado correctamente!'}
         {status === 'error' && 'Error — inténtalo de nuevo'}
       </button>
+
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {status === 'success' && 'Solicitud enviada correctamente.'}
+        {status === 'error'   && 'Error al enviar. Por favor, inténtalo de nuevo.'}
+      </div>
     </form>
   )
 }

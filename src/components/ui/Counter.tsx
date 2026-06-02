@@ -1,4 +1,3 @@
-'use client'
 import { useMotionValue, useTransform, animate, useInView } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
@@ -19,7 +18,7 @@ export default function Counter({ value, suffix = '', className, style }: Counte
   useEffect(() => {
     if (!isInView) return
     const ctrl = animate(count, value, { duration: 1.8, ease: 'easeOut' })
-    return ctrl.stop
+    return () => ctrl.stop()
   }, [isInView, value, count])
 
   return (

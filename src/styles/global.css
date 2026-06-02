@@ -53,6 +53,10 @@ html, body {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .logos-track { animation: none; }
+}
+
 /* Testimonios — infinite scroll */
 @keyframes tst-slide-l {
   from { transform: translateX(0); }

@@ -7,16 +7,18 @@ import HeroAnimations from './HeroAnimations.tsx'
   <video
   class="absolute inset-0 w-full h-full object-cover"
   autoplay loop muted playsinline
+  poster="/images/hero-poster.jpg"
   src="/Video_hero.mp4"
+  aria-hidden="true"
 />
 
   <!-- Subtle overlay — preserves light tone -->
-  <div class="absolute inset-0" style="background: rgba(240,240,238,0.28)"></div>
+  <div class="absolute inset-0" style="background: rgba(0,0,0,0.38)"></div>
 
   <!-- Bottom fade to page background -->
   <div
     class="pointer-events-none absolute bottom-0 left-0 right-0 h-56"
-    style="background: linear-gradient(to bottom, transparent, var(--bg-page))"
+    style="background: linear-gradient(to bottom, transparent, rgba(166, 166, 166, 0.93))"
   ></div>
 
   <!-- Animated content (React island) -->

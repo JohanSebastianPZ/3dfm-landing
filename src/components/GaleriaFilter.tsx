@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -78,7 +76,7 @@ export default function GaleriaFilter() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#f0f0ee' }}
               >
                 <p className="text-[16px] font-medium" style={{ color: '#111111' }}>{p.nombre}</p>
-                <p className="text-[14px]" style={{ color: '#9ca3af' }}>{p.material}</p>
+                <p className="text-[14px]" style={{ color: '#6b7280' }}>{p.material}</p>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -101,7 +99,7 @@ export default function GaleriaFilter() {
                 onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#f0f0ee' }}
               >
                 <p className="text-[16px] font-medium" style={{ color: '#111111' }}>{p.nombre}</p>
-                <p className="text-[14px]" style={{ color: '#9ca3af' }}>{p.material}</p>
+                <p className="text-[14px]" style={{ color: '#6b7280' }}>{p.material}</p>
               </motion.div>
             ))}
           </AnimatePresence>

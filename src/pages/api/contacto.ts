@@ -29,17 +29,22 @@ export const POST: APIRoute = async ({ request }) => {
       })
     }
 
+    function esc(str: string) {
+      return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+    }
+
     const { error } = await resend.emails.send({
       from: 'web@printlab3d.com',
       to: 'hola@printlab3d.com',
       subject: `Nuevo contacto: ${tipo ?? 'Sin tipo'} — ${nombre}`,
+      
       html: `
         <h2>Nuevo mensaje desde la web</h2>
-        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Nombre:</strong> ${esc(nombre)}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Tipo:</strong> ${tipo ?? '—'}</p>
         <p><strong>Mensaje:</strong></p>
-        <p>${mensaje}</p>
+        <p>${esc(mensaje)}</p>
       `,
     })
 
