@@ -178,7 +178,7 @@ export default function ContactoForm() {
       <div className="mb-4">
         <div
           className="h-captcha"
-          data-sitekey={typeof window !== 'undefined' ? (import.meta as Record<string, unknown> & { env: Record<string, string> }).env.PUBLIC_HCAPTCHA_SITE_KEY : ''}
+          data-sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY ?? ''}
           data-theme="light"
         />
       </div>

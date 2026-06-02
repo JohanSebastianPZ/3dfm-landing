@@ -1,21 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
-import type { ReactNode } from 'react'
+import type { ReactNode, CSSProperties } from 'react'
 
 interface StaggerProps {
   children: ReactNode
   staggerDelay?: number
   className?: string
+  style?: CSSProperties
 }
 
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show:   { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-}
-
-export { item as staggerItem }
-
-export default function StaggerContainer({ children, staggerDelay = 0.1, className }: StaggerProps) {
+export default function StaggerContainer({ children, staggerDelay = 0.1, className, style }: StaggerProps) {
   const container = {
     hidden: {},
     show: { transition: { staggerChildren: staggerDelay } },
@@ -23,6 +17,7 @@ export default function StaggerContainer({ children, staggerDelay = 0.1, classNa
   return (
     <motion.div
       className={className}
+      style={style}
       variants={container}
       initial="hidden"
       whileInView="show"

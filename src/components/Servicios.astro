@@ -1,4 +1,6 @@
 ---
+import Visor3D from './Visor3D.tsx'
+
 interface Servicio {
   id: string
   nombre: string
@@ -118,17 +120,9 @@ const svChevron = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" s
 
       </div>
 
-      <!-- Columna derecha: imagen con glow naranja -->
-      <div class="sv-right" aria-hidden="true">
-        <div class="sv-glow"></div>
-        <img
-          src="/images/services-image.png"
-          alt="Rey de ajedrez negro siendo impreso en 3D por un extrusor FDM, mostrando las capas de filamento y la estructura interna de la pieza"
-          class="sv-img"
-          loading="lazy"
-          width="514"
-          height="1024"
-        />
+      <!-- Columna derecha: visor 3D -->
+      <div class="sv-right visor-canvas">
+        <Visor3D client:visible className="sv-visor" />
       </div>
 
     </div>
@@ -139,7 +133,7 @@ const svChevron = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" s
   /* Grid principal — dos columnas simétricas */
   .sv-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.2fr;
     gap: 5rem;
     align-items: center;
   }
@@ -266,66 +260,18 @@ const svChevron = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" s
     border-top: 0.5px solid var(--color-border);
   }
 
-  /* ─── Columna derecha ─── */
+  /* ─── Columna derecha — visor 3D ─── */
   .sv-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
-    padding: 2.5rem 2rem;
+    height: 600px;
+    overflow: hidden;
   }
 
-  /* Glow naranja radial detrás de la pieza */
-  .sv-glow {
+  .sv-visor {
     position: absolute;
     inset: 0;
-    background:
-      radial-gradient(
-        ellipse 65% 70% at 50% 58%,
-        rgba(255, 85,  0, 0.22) 0%,
-        rgba(255, 120, 30, 0.10) 35%,
-        rgba(255, 85,  0, 0.03) 60%,
-        transparent 80%
-      );
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* Halo secundario difuso */
-  .sv-glow::after {
-    content: '';
-    position: absolute;
-    inset: 10% 15%;
-    background: radial-gradient(
-      ellipse 80% 60% at 50% 60%,
-      rgba(255, 140, 40, 0.08) 0%,
-      transparent 70%
-    );
-    filter: blur(24px);
-  }
-
-  /* Imagen */
-  .sv-img {
     width: 100%;
-    max-width: 380px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-    filter:
-      drop-shadow(0 0 28px rgba(255, 85, 0, 0.35))
-      drop-shadow(0 0 55px rgba(255, 85, 0, 0.14))
-      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.20));
-  }
-
-  /* Hover: intensificar glow */
-  .sv-right:hover .sv-img {
-    filter:
-      drop-shadow(0 0 36px rgba(255, 85, 0, 0.45))
-      drop-shadow(0 0 70px rgba(255, 85, 0, 0.20))
-      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.20));
-    transition: filter 0.4s ease;
+    height: 100%;
   }
 
   /* Responsive */
@@ -337,17 +283,14 @@ const svChevron = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" s
 
     .sv-right {
       order: 2;
-      padding: 2rem 1.5rem;
+      height: 420px;
     }
 
     .sv-left {
       order: 1;
     }
 
-    .sv-img {
-      max-width: 260px;
-    }
-
+    /* En tablet/mobile los items tienen border-radius completo */
     .sv-item {
       border-radius: 10px;
       border-left-width: 0.5px;
@@ -356,6 +299,10 @@ const svChevron = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" s
     .sv-item.active {
       border-left-width: 3px;
     }
+  }
+
+  @media (max-width: 640px) {
+    .sv-right { height: 320px; }
   }
 </style>
 
