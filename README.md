@@ -1,6 +1,8 @@
-# PrintLab 3D — Landing Page
+# 3DFM — 3D Factory Maker
 
-Sitio web de presentación para **PrintLab 3D**, servicio de impresión 3D profesional. Incluye visor 3D interactivo, galería de trabajos, tabla de precios y formulario de contacto.
+Sitio web oficial de **3D Factory Maker**, empresa colombiana de fabricación avanzada que combina ingeniería, automatización y manufactura para transformar conceptos en soluciones reales.
+
+🌐 [www.3dfactorymaker.com](https://www.3dfactorymaker.com)
 
 ## Stack
 
@@ -19,7 +21,7 @@ Sitio web de presentación para **PrintLab 3D**, servicio de impresión 3D profe
 
 - **Hero** — presentación principal con animaciones
 - **Clientes** — barra de logos
-- **Servicios** — descripción de los servicios ofrecidos
+- **Servicios** — División Industrial y División Customs
 - **Galería** — trabajos realizados con filtros por categoría
 - **Precios** — tabla de planes
 - **Testimonios** — opiniones de clientes
@@ -33,41 +35,31 @@ Sitio web de presentación para **PrintLab 3D**, servicio de impresión 3D profe
 ## Instalación
 
 ```bash
-# Clonar el repositorio
 git clone https://github.com/JohanSebastianPZ/3dfm-landing.git
 cd 3dfm-landing
-
-# Instalar dependencias
 npm install
-
-# Configurar variables de entorno
 cp .env.example .env
-# Editar .env con tus valores
+# Editar .env con los valores correspondientes
 ```
 
 ## Variables de entorno
 
 ```env
 PUBLIC_WEB3FORMS_ACCESS_KEY=   # Access key de web3forms.com
-PUBLIC_SITE_URL=               # URL del sitio (ej. https://printlab3d.com)
+PUBLIC_SITE_URL=               # URL del sitio (ej. https://www.3dfactorymaker.com)
 ```
 
-## Desarrollo
+## Comandos
 
 ```bash
-npm run dev
-```
-
-Abre [http://localhost:4321](http://localhost:4321) en el navegador.
-
-## Producción
-
-```bash
-# Build
-npm run build
-
-# Preview local del build
-npm run preview
+npm run dev       # Servidor de desarrollo en localhost:4321
+npm run build     # Build de producción
+npm run preview   # Preview local del build
+npm run lint      # Linter
 ```
 
 El deploy a producción se hace automáticamente al hacer push a `main` via Vercel.
+
+## Contacto
+
+Para consultas sobre el sitio: [info@3dfactorymaker.com](mailto:info@3dfactorymaker.com)
