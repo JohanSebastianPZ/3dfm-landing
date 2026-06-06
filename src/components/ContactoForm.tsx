@@ -66,12 +66,21 @@ export default function ContactoForm() {
 
     setStatus('sending')
     try {
-      const res = await fetch('/api/contacto', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          access_key: import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: `Nuevo contacto: ${form.tipo || 'Sin tipo'} — ${form.nombre}`,
+          from_name: form.nombre,
+          nombre: form.nombre,
+          email: form.email,
+          tipo: form.tipo || '—',
+          mensaje: form.mensaje,
+        }),
       })
-      if (res.ok) {
+      const data = await res.json() as { success: boolean }
+      if (data.success) {
         setStatus('success')
       } else {
         setStatus('error')
@@ -171,18 +180,6 @@ export default function ContactoForm() {
         />
         {errors.mensaje && <p className="text-[14px] text-red-500 mt-1">{errors.mensaje}</p>}
       </div>
-
-      {/* hCaptcha */}
-      <div className="mb-4">
-        {import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY
-        ? <div
-            className="h-captcha"
-            data-sitekey={import.meta.env.PUBLIC_HCAPTCHA_SITE_KEY}
-            data-theme="light"
-            />
-        : null
-        }
-    </div>
 
       {/* Privacy checkbox */}
       <div className="mb-6">
