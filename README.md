@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PrintLab 3D — Landing Page
 
-## Getting Started
+Sitio web de presentación para **PrintLab 3D**, servicio de impresión 3D profesional. Incluye visor 3D interactivo, galería de trabajos, tabla de precios y formulario de contacto.
 
-First, run the development server:
+## Stack
+
+| Capa | Tecnología |
+|---|---|
+| Framework | [Astro 5](https://astro.build) |
+| UI interactiva | [React 19](https://react.dev) |
+| Visor 3D | [Three.js](https://threejs.org) + [React Three Fiber](https://r3f.docs.pmnd.rs) + [Drei](https://github.com/pmndrs/drei) |
+| Animaciones | [Framer Motion](https://www.framer.motion.com) |
+| Estilos | [Tailwind CSS 4](https://tailwindcss.com) |
+| Emails | [Web3Forms](https://web3forms.com) |
+| Deploy | [Vercel](https://vercel.com) |
+| Lenguaje | TypeScript |
+
+## Secciones
+
+- **Hero** — presentación principal con animaciones
+- **Clientes** — barra de logos
+- **Servicios** — descripción de los servicios ofrecidos
+- **Galería** — trabajos realizados con filtros por categoría
+- **Precios** — tabla de planes
+- **Testimonios** — opiniones de clientes
+- **Contacto** — formulario con envío vía Web3Forms
+
+## Requisitos
+
+- Node.js 18+
+- npm
+
+## Instalación
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/JohanSebastianPZ/3dfm-landing.git
+cd 3dfm-landing
+
+# Instalar dependencias
+npm install
+
+# Configurar variables de entorno
+cp .env.example .env
+# Editar .env con tus valores
+```
+
+## Variables de entorno
+
+```env
+PUBLIC_WEB3FORMS_ACCESS_KEY=   # Access key de web3forms.com
+PUBLIC_SITE_URL=               # URL del sitio (ej. https://printlab3d.com)
+```
+
+## Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:4321](http://localhost:4321) en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Producción
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build
+npm run build
 
-## Learn More
+# Preview local del build
+npm run preview
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El deploy a producción se hace automáticamente al hacer push a `main` via Vercel.
