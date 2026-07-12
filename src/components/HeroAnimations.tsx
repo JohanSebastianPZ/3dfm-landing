@@ -111,10 +111,8 @@ export default function HeroAnimations() {
 
       <div className="absolute right-6 sm:right-24 top-[22%] text-right">
         <div className="flex items-center gap-3 justify-end">
-          <div className="hidden md:block h-px w-20 rotate-[20deg]"
-               style={{ background: 'rgba(255,85,0,0.45)' }} />
           <Counter
-            value={4200}
+            value={1200}
             suffix="+"
             className="text-4xl sm:text-5xl font-medium tracking-tight"
             style={{ color: '#FF5500', textShadow: '0 2px 12px rgba(255,85,0,0.3)' }}
@@ -129,10 +127,8 @@ export default function HeroAnimations() {
       <div className="absolute right-6 sm:right-20 bottom-16 sm:bottom-20 text-right flex flex-col gap-6 items-end">
         <div>
           <div className="flex items-center gap-3 justify-end">
-            <div className="hidden md:block h-px w-20 rotate-[-20deg]"
-                 style={{ background: 'rgba(255,85,0,0.45)' }} />
             <Counter
-              value={50}
+              value={20}
               suffix="+"
               className="text-4xl sm:text-5xl font-medium tracking-tight"
               style={{ color: '#FF5500', textShadow: '0 2px 12px rgba(255,85,0,0.3)' }}
@@ -146,8 +142,6 @@ export default function HeroAnimations() {
 
         <div>
           <div className="flex items-center gap-3 justify-end">
-            <div className="hidden md:block h-px w-20 rotate-[-20deg]"
-                 style={{ background: 'rgba(255,85,0,0.45)' }} />
             <Counter
               value={98}
               suffix="%"

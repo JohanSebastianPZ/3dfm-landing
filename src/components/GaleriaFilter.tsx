@@ -5,21 +5,19 @@ interface Proyecto {
   id: number
   nombre: string
   material: string
-  tipo: 'fdm' | 'resina' | 'sls'
+  tipo: 'fdm' | 'resina'
 }
 
 const proyectos: Proyecto[] = [
-  { id: 1, nombre: 'Prototipo mecánico',     material: 'Nylon PA12',        tipo: 'sls'    },
   { id: 2, nombre: 'Carcasa electrónica',    material: 'PETG negro',        tipo: 'fdm'    },
   { id: 3, nombre: 'Figura coleccionable',   material: 'Resina ABS-like',   tipo: 'resina' },
-  { id: 4, nombre: 'Herramienta industrial', material: 'Carbono reforzado', tipo: 'sls'    },
   { id: 5, nombre: 'Soporte médico',         material: 'Resina Dental',     tipo: 'resina' },
   { id: 6, nombre: 'Pieza automoción',       material: 'ABS + fibra',       tipo: 'fdm'    },
   { id: 7, nombre: 'Joyería personalizada',  material: 'Resina Castable',   tipo: 'resina' },
   { id: 8, nombre: 'Engranaje funcional',    material: 'PLA reforzado',     tipo: 'fdm'    },
 ]
 
-const FILTROS = ['Todos', 'FDM', 'Resina', 'SLS'] as const
+const FILTROS = ['Todos', 'FDM', 'Resina'] as const
 type Filtro = typeof FILTROS[number]
 
 function mapFiltro(f: Filtro): Proyecto['tipo'] | null {
